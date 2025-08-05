@@ -1,0 +1,8 @@
+
+services:
+  Web:
+    image: hatakekakashihk/webapp
+    platform: linux/amd64   
+    container_name: Website
+    ports:
+      - "3000:3000"
