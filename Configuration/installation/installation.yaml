@@ -1,0 +1,62 @@
+---
+- name: Jenkins Installation
+  hosts: jenkins
+  become: true
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Install Java-JDK 21 (more stable)
+      apt:
+        name: openjdk-21-jdk
+        state: present
+    - name: Create keyrings directory
+      file:
+        path: /etc/apt/keyrings
+        state: directory
+        mode: '0755'
+
+    - name: Download Jenkins repository key
+      get_url:
+        url: https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+        dest: /etc/apt/keyrings/jenkins-keyring.asc
+        mode: '0644'
+
+    - name: Add Jenkins repository
+      apt_repository:
+        repo: "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/"
+        state: present
+        filename: jenkins
+
+    - name: Install Jenkins
+      apt:
+        name: jenkins
+        state: present
+        update_cache: yes
+
+    - name: Start and enable Jenkins service
+      systemd:
+        name: jenkins
+        state: started
+        enabled: yes
+
+    - name: Wait for Jenkins to start
+      wait_for:
+        port: 8080
+        delay: 30
+
+    - name: Get Jenkins initial admin password
+      command: cat /var/lib/jenkins/secrets/initialAdminPassword
+      register: jenkins_admin_password
+      ignore_errors: yes
+
+    - name: Display Jenkins initial admin password
+      debug:
+        msg: "Jenkins Initial Admin Password: {{ jenkins_admin_password.stdout }}"
+      when: jenkins_admin_password.rc == 0
+
+    - name: Display Jenkins URL
+      debug:
+        msg: "Jenkins is accessible at http://{{ ansible_host }}:8080"
