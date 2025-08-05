@@ -1,4 +1,4 @@
-# Task-2 CI/CD Jenkins Pipeline
+# Jenkins-CI-CD-Using-Terraform-Ansible-Docker-Jenkins
 
 This project demonstrates a complete CI/CD pipeline setup using Jenkins, Docker, Terraform, and Ansible to build and deploy a Next.js web application.
 
