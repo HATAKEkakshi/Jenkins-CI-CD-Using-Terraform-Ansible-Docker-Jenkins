@@ -20,9 +20,9 @@ FROM node:slim
 WORKDIR /usr/src/app
 
 # Copy only necessary files
-COPY --from=build /usr/src/app/Task-2-CI-CD-JENKINS/.next ./.next
-COPY --from=build /usr/src/app/Task-2-CI-CD-JENKINS/package*.json ./
-COPY --from=build /usr/src/app/Task-2-CI-CD-JENKINS/node_modules ./node_modules
+COPY --from=build /usr/src/app/Jenkins-CI-CD-Using-Terraform-Ansible-Docker-Jenkins/.next ./.next
+COPY --from=build /usr/src/app/Jenkins-CI-CD-Using-Terraform-Ansible-Docker-Jenkins/package*.json ./
+COPY --from=build /usr/src/app/Jenkins-CI-CD-Using-Terraform-Ansible-Docker-Jenkins/node_modules ./node_modules
 
 EXPOSE 3000
 
