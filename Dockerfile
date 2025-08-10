@@ -7,8 +7,8 @@ RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /usr/src/app
 
-# Clone Task-2 repository
-RUN git clone https://github.com/Elevate-labs-intership/Task-2-CI-CD-JENKINS.git
+# Clone SourceCode repository
+RUN git clone https://github.com/HATAKEkakshi/Jenkins-CI-CD-Using-Terraform-Ansible-Docker-Jenkins.git
 
 # Install dependencies and build
 WORKDIR /usr/src/app/Task-2-CI-CD-JENKINS
