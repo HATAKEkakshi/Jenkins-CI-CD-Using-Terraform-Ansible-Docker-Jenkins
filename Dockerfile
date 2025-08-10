@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 RUN git clone https://github.com/HATAKEkakshi/Jenkins-CI-CD-Using-Terraform-Ansible-Docker-Jenkins.git
 
 # Install dependencies and build
-WORKDIR /usr/src/app/Task-2-CI-CD-JENKINS
+WORKDIR /usr/src/app/Jenkins-CI-CD-Using-Terraform-Ansible-Docker-Jenkins
 RUN npm ci --only=production && npm run build
 
 # ----------- Runtime Stage -----------
