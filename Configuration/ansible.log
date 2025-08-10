@@ -146,3 +146,71 @@ https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_disc
 2025-08-06 02:50:54,653 p=20744 u=hemantkumar n=ansible INFO| PLAY RECAP **************************************************************************************************************************************************************************************************************
 2025-08-06 02:50:54,654 p=20744 u=hemantkumar n=ansible INFO| jenkins                    : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 2025-08-06 03:08:47,218 p=30344 u=hemantkumar n=ansible ERROR| ERROR! the playbook: docker-install.yaml could not be found
+2025-08-10 19:25:18,259 p=41773 u=hemantkumar n=ansible INFO| PLAY [Jenkins Installation] ******************************************************************************************************************************************************************************
+2025-08-10 19:25:18,263 p=41773 u=hemantkumar n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************************************************************************************************
+2025-08-10 19:25:21,577 p=41773 u=hemantkumar n=ansible INFO| fatal: [jenkins]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added '3.239.105.106' (ED25519) to the list of known hosts.\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nPermissions 0644 for 'jenkinscicd.pem' are too open.\r\nIt is required that your private key files are NOT accessible by others.\r\nThis private key will be ignored.\r\nLoad key \"jenkinscicd.pem\": bad permissions\r\nubuntu@3.239.105.106: Permission denied (publickey).", "unreachable": true}
+2025-08-10 19:25:21,579 p=41773 u=hemantkumar n=ansible INFO| PLAY RECAP ***********************************************************************************************************************************************************************************************
+2025-08-10 19:25:21,579 p=41773 u=hemantkumar n=ansible INFO| jenkins                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-08-10 19:25:34,567 p=41988 u=hemantkumar n=ansible INFO| PLAY [Jenkins Installation] ******************************************************************************************************************************************************************************
+2025-08-10 19:25:34,571 p=41988 u=hemantkumar n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************************************************************************************************
+2025-08-10 19:25:37,768 p=41988 u=hemantkumar n=ansible INFO| fatal: [jenkins]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\n@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @\r\n@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@\r\nPermissions 0644 for 'jenkinscicd.pem' are too open.\r\nIt is required that your private key files are NOT accessible by others.\r\nThis private key will be ignored.\r\nLoad key \"jenkinscicd.pem\": bad permissions\r\nubuntu@3.239.105.106: Permission denied (publickey).", "unreachable": true}
+2025-08-10 19:25:37,769 p=41988 u=hemantkumar n=ansible INFO| PLAY RECAP ***********************************************************************************************************************************************************************************************
+2025-08-10 19:25:37,769 p=41988 u=hemantkumar n=ansible INFO| jenkins                    : ok=0    changed=0    unreachable=1    failed=0    skipped=0    rescued=0    ignored=0   
+2025-08-10 19:26:20,090 p=42420 u=hemantkumar n=ansible INFO| PLAY [Jenkins Installation] ******************************************************************************************************************************************************************************
+2025-08-10 19:26:20,094 p=42420 u=hemantkumar n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************************************************************************************************
+2025-08-10 19:26:34,790 p=42420 u=hemantkumar n=ansible WARNING| [WARNING]: Platform linux on host jenkins is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could change the meaning of that path.
+See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-08-10 19:26:34,792 p=42420 u=hemantkumar n=ansible INFO| ok: [jenkins]
+2025-08-10 19:26:34,796 p=42420 u=hemantkumar n=ansible INFO| TASK [Update apt cache] **********************************************************************************************************************************************************************************
+2025-08-10 19:26:54,361 p=42420 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:26:54,372 p=42420 u=hemantkumar n=ansible INFO| TASK [Install Java-JDK 21 (more stable)] *****************************************************************************************************************************************************************
+2025-08-10 19:27:32,755 p=42420 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:27:32,767 p=42420 u=hemantkumar n=ansible INFO| TASK [Create keyrings directory] *************************************************************************************************************************************************************************
+2025-08-10 19:27:40,376 p=42420 u=hemantkumar n=ansible INFO| ok: [jenkins]
+2025-08-10 19:27:40,387 p=42420 u=hemantkumar n=ansible INFO| TASK [Download Jenkins repository key] *******************************************************************************************************************************************************************
+2025-08-10 19:27:48,108 p=42420 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:27:48,124 p=42420 u=hemantkumar n=ansible INFO| TASK [Add Jenkins repository] ****************************************************************************************************************************************************************************
+2025-08-10 19:28:04,305 p=42420 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:28:04,322 p=42420 u=hemantkumar n=ansible INFO| TASK [Install Jenkins] ***********************************************************************************************************************************************************************************
+2025-08-10 19:28:43,830 p=42420 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:28:43,840 p=42420 u=hemantkumar n=ansible INFO| TASK [Start and enable Jenkins service] ******************************************************************************************************************************************************************
+2025-08-10 19:28:55,605 p=42420 u=hemantkumar n=ansible INFO| ok: [jenkins]
+2025-08-10 19:28:55,616 p=42420 u=hemantkumar n=ansible INFO| TASK [Wait for Jenkins to start] *************************************************************************************************************************************************************************
+2025-08-10 19:29:33,579 p=42420 u=hemantkumar n=ansible INFO| ok: [jenkins]
+2025-08-10 19:29:33,593 p=42420 u=hemantkumar n=ansible INFO| TASK [Get Jenkins initial admin password] ****************************************************************************************************************************************************************
+2025-08-10 19:29:41,258 p=42420 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:29:41,269 p=42420 u=hemantkumar n=ansible INFO| TASK [Display Jenkins initial admin password] ************************************************************************************************************************************************************
+2025-08-10 19:29:41,293 p=42420 u=hemantkumar n=ansible INFO| ok: [jenkins] => {
+    "msg": "Jenkins Initial Admin Password: 9bd91c724a5b47779d2bcdbbff8ad483"
+}
+2025-08-10 19:29:41,297 p=42420 u=hemantkumar n=ansible INFO| TASK [Display Jenkins URL] *******************************************************************************************************************************************************************************
+2025-08-10 19:29:41,310 p=42420 u=hemantkumar n=ansible INFO| ok: [jenkins] => {
+    "msg": "Jenkins is accessible at http://3.239.105.106:8080"
+}
+2025-08-10 19:29:41,310 p=42420 u=hemantkumar n=ansible INFO| PLAY RECAP ***********************************************************************************************************************************************************************************************
+2025-08-10 19:29:41,310 p=42420 u=hemantkumar n=ansible INFO| jenkins                    : ok=12   changed=6    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2025-08-10 19:36:26,847 p=46903 u=hemantkumar n=ansible INFO| PLAY [Install Docker on Jenkins Server] ******************************************************************************************************************************************************************
+2025-08-10 19:36:26,851 p=46903 u=hemantkumar n=ansible INFO| TASK [Gathering Facts] ***********************************************************************************************************************************************************************************
+2025-08-10 19:36:44,789 p=46903 u=hemantkumar n=ansible WARNING| [WARNING]: Platform linux on host jenkins is using the discovered Python interpreter at /usr/bin/python3.12, but future installation of another Python interpreter could change the meaning of that path.
+See https://docs.ansible.com/ansible-core/2.18/reference_appendices/interpreter_discovery.html for more information.
+
+2025-08-10 19:36:44,790 p=46903 u=hemantkumar n=ansible INFO| ok: [jenkins]
+2025-08-10 19:36:44,794 p=46903 u=hemantkumar n=ansible INFO| TASK [Update apt cache] **********************************************************************************************************************************************************************************
+2025-08-10 19:36:55,322 p=46903 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:36:55,334 p=46903 u=hemantkumar n=ansible INFO| TASK [Install required packages] *************************************************************************************************************************************************************************
+2025-08-10 19:37:06,894 p=46903 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:37:06,905 p=46903 u=hemantkumar n=ansible INFO| TASK [Add Docker GPG key] ********************************************************************************************************************************************************************************
+2025-08-10 19:37:14,769 p=46903 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:37:14,782 p=46903 u=hemantkumar n=ansible INFO| TASK [Add Docker repository] *****************************************************************************************************************************************************************************
+2025-08-10 19:37:27,331 p=46903 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:37:27,343 p=46903 u=hemantkumar n=ansible INFO| TASK [Install Docker] ************************************************************************************************************************************************************************************
+2025-08-10 19:37:50,892 p=46903 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:37:50,909 p=46903 u=hemantkumar n=ansible INFO| TASK [Start and enable Docker service] *******************************************************************************************************************************************************************
+2025-08-10 19:37:58,944 p=46903 u=hemantkumar n=ansible INFO| ok: [jenkins]
+2025-08-10 19:37:58,957 p=46903 u=hemantkumar n=ansible INFO| TASK [Add jenkins user to docker group] ******************************************************************************************************************************************************************
+2025-08-10 19:38:06,405 p=46903 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:38:06,414 p=46903 u=hemantkumar n=ansible INFO| TASK [Restart Jenkins to apply group changes] ************************************************************************************************************************************************************
+2025-08-10 19:38:26,372 p=46903 u=hemantkumar n=ansible INFO| changed: [jenkins]
+2025-08-10 19:38:26,378 p=46903 u=hemantkumar n=ansible INFO| PLAY RECAP ***********************************************************************************************************************************************************************************************
+2025-08-10 19:38:26,378 p=46903 u=hemantkumar n=ansible INFO| jenkins                    : ok=9    changed=7    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

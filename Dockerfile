@@ -12,7 +12,7 @@ RUN git clone https://github.com/HATAKEkakshi/Jenkins-CI-CD-Using-Terraform-Ansi
 
 # Install dependencies and build
 WORKDIR /usr/src/app/Jenkins-CI-CD-Using-Terraform-Ansible-Docker-Jenkins
-RUN npm ci --only=production && npm run build
+RUN npm install && npm run build
 
 # ----------- Runtime Stage -----------
 FROM node:slim
