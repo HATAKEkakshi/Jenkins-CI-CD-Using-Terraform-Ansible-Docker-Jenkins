@@ -1,4 +1,4 @@
-# Task-2 CI-CD Jenkins
+# CI-CD Jenkins
 
 # ----------- Build Stage -----------
 FROM node:slim AS build
